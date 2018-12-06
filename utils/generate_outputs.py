@@ -99,10 +99,11 @@ def save_metrics_tables(results):
                     fpr, tpr, _ = roc_curve(item["labels"],item["scores"], 1)
                     auprc = auc(rc,pr)
                     auroc = auc(fpr,tpr)
+                    algorithm_str = item["algorithm"].upper()
                     with open(filepath,'a') as f:
-                        f.write('%s & %.4f  & %.4f  \\\\ \\hline\n'%(dataset,auroc,auprc))
+                        f.write('%s & %.4f  & %.4f  \\\\ \\hline\n'%(algorithm_str,auroc,auprc))
         
-        caption_str = '\\gls{nd} performance metrics the evaluated algorithms on the %s dataset'%dataset_str
+        caption_str = '\\gls{nd} performance metrics for the evaluated algorithms on the %s dataset'%dataset_str
         label_str = 'tab:results %s'%dataset
 
         with open(filepath,'a') as f:
