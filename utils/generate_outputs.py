@@ -1,5 +1,6 @@
 from sklearn.metrics import roc_curve, precision_recall_curve, auc
 from matplotlib import pyplot as plt
+plt.rcParams["font.family"] = "Times"
 from utils.unpickle_scores import separate_in_and_out
 import os
 
@@ -20,7 +21,7 @@ def save_score_histogram(scores, labels, title_prefix, legend_loc = 'upper right
     plt.hist(outlier_scores, alpha=0.5, label='Outliers')
     plt.legend(loc=legend_loc)
     plt.title("Scores for %s on %s"%(algorithm, dataset_str))
-    plt.xlabel("Score")
+    plt.xlabel("score")
     export_path = os.path.join(export_dir, title_prefix+'_scores_hist.svg')
     print('Saving score histogram to "%s"'%export_path)
     plt.savefig(export_path)
@@ -45,8 +46,8 @@ def save_roc_curves(results, title_prefix = "all_roc_", legend_loc = 'upper righ
                 fpr, tpr, _ = roc_curve(item["labels"],item["scores"], 1)
                 plt.plot(fpr,tpr,label=item["algorithm"])
         plt.title("Receiver operating characteristic for %s experiment"%dataset_str)
-        plt.xlabel('False positive rate')
-        plt.ylabel('True positive rate')
+        plt.xlabel('false positive rate')
+        plt.ylabel('true positive rate')
         plt.legend(loc=legend_loc)
         export_path = os.path.join(export_dir, title_prefix+dataset+".svg")
         plt.savefig(export_path)
@@ -68,9 +69,11 @@ def save_prc_curves(results, title_prefix = "all_prc_", legend_loc = 'upper righ
                 pr, rc, _ = precision_recall_curve(item["labels"],item["scores"], 1)
                 plt.plot(rc,pr,label=item["algorithm"])
         plt.title("Precicion-recall for %s experiment"%dataset_str)
-        plt.xlabel('Recall')
-        plt.ylabel('Precision')
+        plt.xlabel('recall')
+        plt.ylabel('precision')
         plt.legend(loc=legend_loc)
+        # Set correct font (Times)
+        
         export_path = os.path.join(export_dir, title_prefix+dataset+".svg")
         plt.savefig(export_path)
         print("Saving PRC diagrim to %s"%export_path)
