@@ -92,7 +92,7 @@ def save_metrics_tables(results):
         filepath = export_dir+filename
         
         with open(filepath,'w') as f:
-            f.write('\\begin{table}[]\n')
+            f.write('\\begin{table}\n')
             f.write('\\begin{tabular}{|l|l|l|}\n')
             f.write('\\hline\n')
             f.write('      & AUROC & AUPRC \\\\ \\hline\n')
