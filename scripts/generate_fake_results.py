@@ -6,7 +6,7 @@ export_dir = '/home/erik/Github/exjobb_resultat/data/'
 
 for dataset in ("prosivic", "dreyeve"):
     for algorithm in ("GPND", "DSVDD", "ALOCC"):
-        n_samples = np.random.randint(50,100)
+        n_samples = np.random.randint(500,1000)
         labels = np.concatenate([np.zeros(n_samples//2), np.ones(n_samples//2)])
         std = 1
         c_in = -1

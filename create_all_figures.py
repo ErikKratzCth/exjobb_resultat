@@ -1,5 +1,5 @@
 from utils.unpickle_scores import load_all_scores
-from utils.plot_figures import *
+from utils.generate_outputs import *
 
 results = load_all_scores()
 
@@ -16,3 +16,5 @@ save_roc_curves(results)
 # Plot PRC
 save_prc_curves(results)
 
+# Generate tables with metrics
+save_metrics_tables(results)
