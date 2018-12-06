@@ -22,6 +22,7 @@ def save_score_histogram(scores, labels, title_prefix, legend_loc = 'upper right
     plt.legend(loc=legend_loc)
     plt.title("Scores for %s on %s"%(algorithm, dataset_str))
     plt.xlabel("score")
+    plt.ylabel("frequency")
     export_path = os.path.join(export_dir, title_prefix+'_scores_hist.svg')
     print('Saving score histogram to "%s"'%export_path)
     plt.savefig(export_path)
