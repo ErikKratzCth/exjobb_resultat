@@ -18,3 +18,7 @@ save_prc_curves(results)
 
 # Generate tables with metrics
 save_metrics_tables(results)
+
+# Generate source code for latex figures
+save_histogram_figures_latex_code(["prosivic", "dreyeve"],["alocc","dsvdd", "gpnd"])
+save_metrics_figures_latex_code(["prosivic","dreyeve"],["roc","prc"])
