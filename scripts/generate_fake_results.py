@@ -17,7 +17,7 @@ for dataset in ("prosivic", "dreyeve"):
 
         filepath = export_dir + "%s_%s.pkl"%(dataset, algorithm)
         with open(filepath,'wb') as f:
-            pickle.dump([scores,labels],f)
+            pickle.dump([scores,labels],f, protocol=2)
 
         print("Saved results to %s"%filepath)
         
