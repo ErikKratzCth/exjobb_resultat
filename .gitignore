@@ -1,3 +1,5 @@
 # Output figures, etc
+outputs
 outputs/
+outputs/*
 *.svg
