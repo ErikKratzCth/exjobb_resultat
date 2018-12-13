@@ -11,11 +11,11 @@ p5
 g4
 sS'DSVDD_recon_err'
 p6
-S'mmon_arhitecture_181210'
+S'mmon_architecture_181212_WITH_BIAS'
 p7
 sVDSVDD
 p8
-S'mmon_arhitecture_181210'
+S'mmon_architecture_181212_WITH_BIAS'
 p9
 ssVdreyeve
 p10
@@ -24,6 +24,11 @@ g3
 g4
 sg5
 g4
+sS'DSVDD_recon_err'
+p12
+S'common_architecture_181212'
+p13
 sg8
-g4
+S'common_architecture_181212'
+p14
 ss.
