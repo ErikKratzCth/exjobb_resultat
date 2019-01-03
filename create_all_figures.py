@@ -1,12 +1,12 @@
-from utils.unpickle_scores import load_all_scores
+from utils.unpickle_scores import *
 from utils.generate_outputs import *
+
+
+# Print out which experiments are stored
+datasets, algorithms = show_all_stored_experiments()
 
 results = load_all_scores()
 
-# for key, value in results.items():
-#     print(key)
-#     for subkey, subvalue in value.items():
-#         print("\t",subkey)
 # Create histograms
 save_all_histograms(results)
 
@@ -20,5 +20,5 @@ save_prc_curves(results)
 save_metrics_tables(results)
 
 # Generate source code for latex figures
-save_histogram_figures_latex_code(["prosivic", "dreyeve"],["alocc","dsvdd", "gpnd"])
-save_metrics_figures_latex_code(["prosivic","dreyeve"],["roc","prc"])
+save_histogram_figures_latex_code(datasets,algorithms)
+save_metrics_figures_latex_code(datasets,["roc","prc"])

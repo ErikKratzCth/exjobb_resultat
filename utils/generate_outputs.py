@@ -121,7 +121,7 @@ def save_metrics_tables(results):
 
 def save_histogram_figures_latex_code(datasets, algorithms):
     for dataset in datasets:
-
+        
         if dataset == "dreyeve":
             dataset_str = "Dr(eye)ve"
         elif dataset == "prosivic":
